@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		input {
+			display: none;
+		}
+		label {
+			display: block;
+			width: 95px;
+			height: 36px;
+		}
+		input + label {
+			background: url('assets/img/gender_selector.png') no-repeat top left;
+		}
+		input:checked + label {
+			background: url(assets/img/gender_selector1.png) no-repeat top left;
+		}
+	</style>
+</head>
+<body>
+	<input type="checkbox" id="checkbox_id">
+	<label for="checkbox_id"></label>
+</body>
+</html>
