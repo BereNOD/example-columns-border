@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		span {
+			display: none;
+		}
+		input.error {
+			border: 3px solid red;
+		}
+		input.error + span {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div>
+		<input type="text" id="my-input">
+		<span>Tooltip</span>
+	</div>
+
+	<script>
+		var selector = '#my-input';
+		var input = document.querySelector(selector);
+
+		input && input.addEventListener('blur', _inputChangeHandler);
+
+		function _inputChangeHandler ( e ) {
+			if ( '' === this.value ) {
+				if ( !this.classList.contains('error') ) {
+					this.classList.add('error');
+				}
+			}
+			else {
+				if ( this.classList.contains('error') ) {
+					this.classList.remove('error');
+				}
+			}
+		}
+	</script>
+</body>
+</html>
